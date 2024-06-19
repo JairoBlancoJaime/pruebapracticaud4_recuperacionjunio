@@ -110,42 +110,15 @@ public class ReservaMesa {
             {
                 mesaSalida = iIzq;
                 noEncontrada = false;
-                iIzq--;
+
             }
+            iIzq--;
 
             if (noEncontrada && iDer < array.length && array[iDer] + numPersonas <= tamanioMesa) {
                 mesaSalida = iDer;
                 noEncontrada = false;
-                iDer++;
             }
-
-        }
-
-        return mesaSalida;
-    }
-
-    int buscarMesaCompartirMasAlejadaDe(int mesaBuscada, int numPersonas)
-    {
-        boolean noEncontrada = true;
-        int mesaSalida = -1;
-
-        int iDer = array.length-1;
-        int iIzq = 0;
-
-        while ( noEncontrada && (iIzq <= mesaBuscada || iDer >= mesaBuscada) )
-        {
-            if (iIzq <= mesaBuscada && array[iIzq] + numPersonas <= tamanioMesa )
-            {
-                mesaSalida = iIzq;
-                noEncontrada = false;
-                iIzq++;
-            }
-
-            if (noEncontrada && iDer >= mesaBuscada && array[iDer] + numPersonas <= tamanioMesa) {
-                mesaSalida = iDer;
-                noEncontrada = false;
-                iDer++;
-            }
+            iDer++;
 
         }
 
